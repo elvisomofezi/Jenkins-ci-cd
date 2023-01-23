@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo 'deploying....'
 		sshagent(['deploy_user']) {
-		sh "scp /var/lib/jenkins/workspace/Jenkins-CI-CD/target/webapp-0.2.war centos@54.200.138.162:/home/centos/apache-tomcat-11.0.0-M1/webapps"
+		sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Jenkins-CI-CD/target/webapp-0.2.war centos@54.200.138.162:/home/centos/apache-tomcat-11.0.0-M1/webapps"
 		 }
             }
         }
