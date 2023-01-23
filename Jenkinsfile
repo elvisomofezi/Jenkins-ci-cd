@@ -10,8 +10,8 @@ pipeline {
         }
         stage('test') {
             steps {
-                echo 'Building..'
-		sh '/mvn test'
+                echo 'test..'
+		sh 'mvn test'
             }
         }
         stage('delopy') {
